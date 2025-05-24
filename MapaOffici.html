@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Imperium | Inicio</title>
+  
+  <style>
+    :root {
+      --fondo: #ffffff;
+      --texto: #1a1a1a;
+      --azul: #357edd; /* Azul más claro */
+      --azul-suave: #e6f0ff;
+      --gris-claro: #f5f5f5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background-color: var(--fondo);
+      color: var(--texto);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #000;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      background-color: var(--azul);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+    }
+
+ main {
+  flex: 1;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: var(--azul);
+      margin-bottom: 30px;
+      animation: slideIn 1s ease-out;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 300px;
+      border-radius: 10px;
+      animation: fadeInImage 1.5s ease-in-out;
+    }
+
+    p {
+      text-align: center;
+      font-size: 18px;
+      animation: fadeInText 2s ease;
+    }
+
+    footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      margin-top: auto;
+    }
+
+    /* Animaciones */
+    @keyframes fadeInMain {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInImage {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInText {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+        :root {
+      --fondo: #f5f5f5;
+      --texto: #222;
+      --negro: #111;
+      --gris: #dcdcdc;
+      --azul: #004080;
+      --azul-suave: #e6f0ff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--fondo);
+      color: var(--texto);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    header {
+      background-color: var(--negro);
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    }
+
+    nav {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      background-color: var(--azul);
+    }
+
+    h1 {
+      text-align: center;
+      margin: 60px 0 20px;
+      font-size: 50px;
+      color: var(--azul);
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    .contenedor-tabla {
+      display: flex;
+      justify-content: center;
+      margin: 40px 20px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    table {
+      width: 90%;
+      max-width: 900px;
+      border-collapse: collapse;
+      background-color: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    th {
+      background-color: var(--azul);
+      color: white;
+      padding: 20px;
+      font-size: 20px;
+    }
+
+    td {
+      padding: 25px;
+      font-size: 17px;
+      border-bottom: 1px solid var(--gris);
+      background-color: var(--azul-suave);
+      color: #333;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      background-color: var(--negro);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 60px;
+      font-size: 14px;
+    }
+    main {
+  flex: 1;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="Inicio.html">Inicio</a></li>
+        <li><a href="MiyVi.html">Misión y Visión</a></li>
+        <li><a href="MapaOffici.html">Mapa de Oficinas</a></li>
+        <li><a href="Proyec.html">Proyectos</a></li>
+        <li><a href="IA.html">Diseño con IA</a></li>
+        <li><a href="Contacto.html">Contacto</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1></h1>
+    <img src="Mapaofi.jpg" alt="Logo de la empresa">
+    <p></p>
+  </main>
+
+  <footer>
+    &copy; 2025 Imperium Desarrollos Inmobiliarios | Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>

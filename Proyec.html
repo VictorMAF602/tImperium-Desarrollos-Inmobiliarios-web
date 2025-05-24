@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Proyectos | Imperium</title>
+  <style>
+    :root {
+      --fondo: #ffffff;
+      --texto: #1a1a1a;
+      --azul: #357edd;
+      --azul-suave: #e6f0ff;
+      --gris-claro: #f5f5f5;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+
+    body {
+      background-color: var(--fondo);
+      color: var(--texto);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #000;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      background-color: var(--azul);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+    }
+
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: var(--azul);
+      margin-bottom: 40px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .proyecto {
+      background-color: var(--azul-suave);
+      padding: 20px;
+      margin-bottom: 60px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .imagenes {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .imagenes div {
+      text-align: center;
+    }
+
+    .imagenes img {
+      width: 240px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .info {
+      text-align: center;
+    }
+
+    .info h2 {
+      font-size: 26px;
+      margin-bottom: 10px;
+      color: var(--azul);
+    }
+
+    .info p {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      margin-top: auto;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="Inicio.html">Inicio</a></li>
+        <li><a href="MiyVi.html">Misión y Visión</a></li>
+        <li><a href="MapaOffici.html">Mapa de Oficinas</a></li>
+        <li><a href="Proyec.html">Proyectos</a></li>
+        <li><a href="IA.html">Diseño con IA</a></li>
+        <li><a href="Contacto.html">Contacto</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Proyectos Recientes</h1>
+
+    <!-- Casa 1 -->
+    <div class="proyecto">
+      <div class="imagenes">
+        <div>
+          <p><strong>Antes</strong></p>
+          <img src="antes1.jpg" alt="Antes Casa 1">
+        </div>
+        <div>
+          <p><strong>Después</strong></p>
+          <img src="casa1.jpg.jpg" alt="Después Casa 1">
+        </div>
+      </div>
+      <div class="info">
+        <h2>Casa Encanto Natural</h2>
+        <p><strong>Dirección:</strong> Bosque Verde 45, Pueblo Paleto (GTA V)</p>
+        <p><strong>Precio estimado:</strong> $125,000 USD</p>
+        <p>De un diseño sencillo a una vivienda ecológica con jardín, porche y acabados rústicos. Perfecta para zonas rurales.</p>
+      </div>
+    </div>
+
+    <!-- Casa 2 -->
+    <div class="proyecto">
+      <div class="imagenes">
+        <div>
+          <p><strong>Antes</strong></p>
+          <img src="antes2.jpg" alt="Antes Casa 2">
+        </div>
+        <div>
+          <p><strong>Después</strong></p>
+          <img src="casa2.jpg.jpg" alt="Después Casa 2">
+        </div>
+      </div>
+      <div class="info">
+        <h2>Casa Refugio Rojo</h2>
+        <p><strong>Dirección:</strong> Calle Escarlata 12, Ciudad Los Santos (GTA)</p>
+        <p><strong>Precio estimado:</strong> $190,000 USD</p>
+        <p>Transformada en un refugio urbano moderno con diseño geométrico, tonos grises y rojo vivo como acento.</p>
+      </div>
+    </div>
+
+    <!-- Casa 3 -->
+    <div class="proyecto">
+      <div class="imagenes">
+        <div>
+          <p><strong>Antes</strong></p>
+          <img src="antes3.jpg" alt="Antes Casa 3">
+        </div>
+        <div>
+          <p><strong>Después</strong></p>
+          <img src="casa3.jpg.jpg" alt="Después Casa 3">
+        </div>
+      </div>
+      <div class="info">
+        <h2>Casa Azul Contempo</h2>
+        <p><strong>Dirección:</strong> Av. Horizonte 8, Distrito Prismarine (Minecraft City)</p>
+        <p><strong>Precio estimado:</strong> $150,000 USD</p>
+        <p>Renovación con fachada azul pastel y balcón moderno. Equilibrio entre tradición y diseño contemporáneo.</p>
+      </div>
+    </div>
+
+    <!-- Casa 4 -->
+    <div class="proyecto">
+      <div class="imagenes">
+        <div>
+          <p><strong>Antes</strong></p>
+          <img src="antes4.png" alt="Antes Casa 4">
+        </div>
+        <div>
+          <p><strong>Después</strong></p>
+          <img src="casa4.jpg.jpg" alt="Después Casa 4">
+        </div>
+      </div>
+      <div class="info">
+        <h2>Casa Brisa Clara</h2>
+        <p><strong>Dirección:</strong> Esquina Neón 3, Sector Vortex (Cyber City)</p>
+        <p><strong>Precio estimado:</strong> $210,000 USD</p>
+        <p>Pasó de una casa simple a una moderna y minimalista con ventanales amplios y espacio social exterior.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Imperium Desarrollos Inmobiliarios | Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>

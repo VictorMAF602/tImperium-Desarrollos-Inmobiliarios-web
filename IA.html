@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diseño con IA | Imperium</title>
+  <style>
+    
+    :root {
+      --fondo: #ffffff;
+      --texto: #1a1a1a;
+      --azul: #357edd;
+      --azul-suave: #e6f0ff;
+      --gris-claro: #f5f5f5;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+
+    body {
+      background-color: var(--fondo);
+      color: var(--texto);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #000;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      background-color: var(--azul);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+    }
+
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      color: var(--azul);
+      margin-bottom: 20px;
+      animation: slideIn 1s ease-out;
+    }
+
+    p, ul {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    form {
+      background-color: var(--gris-claro);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      animation: fadeIn 1.5s ease;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: var(--azul);
+    }
+
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .btns {
+      display: flex;
+      gap: 15px;
+    }
+
+    button {
+      background-color: var(--azul);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      flex: 1;
+    }
+
+    button:hover {
+      background-color: #265ecf;
+    }
+
+    #resultado {
+      margin-top: 25px;
+      font-style: italic;
+      text-align: center;
+      color: #333;
+      animation: fadeIn 0.8s ease;
+    }
+
+    #imagen-generada {
+      display: none;
+      margin: 30px auto;
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      animation: fadeIn 1s ease;
+    }
+
+    footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      margin-top: auto;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+
+  <script>
+    function generarIdea() {
+      const descripcion = document.getElementById('descripcion').value.trim().toLowerCase();
+      const resultado = document.getElementById('resultado');
+      const imagen = document.getElementById('imagen-generada');
+
+      let texto = "";
+      let src = "";
+
+      if (descripcion.includes("casa encanto natural")) {
+        texto = "Una casa pequeña de un solo piso con paredes exteriores verdes y techo de tejas grises. Tiene un porche frontal de madera con dos pilares de piedra. Estilo realista, ambiente tranquilo de campo.";
+        src = "casa1.jpg.jpg";
+      } else if (descripcion.includes("casa refugio rojo")) {
+        texto = "Residencia moderna con diseño geométrico, detalles en rojo y un patio pavimentado rodeado de árboles.";
+        src = "casa2.jpg.jpg";
+      } else if (descripcion.includes("casa azul contempo")) {
+        texto = "Casa simétrica de dos niveles en azul pastel y blanco, con balcón elegante y césped cuidado.";
+        src = "casa3.jpg.jpg";
+      } else if (descripcion.includes("casa brisa clara")) {
+        texto = "Diseño minimalista, fachada neutra, ventanales amplios y zona de estar al aire libre. Estilo moderno sobrio.";
+        src = "casa4.jpg.jpg";
+      } else {
+        texto = "❗ Lo sentimos, no se encontró una imagen para esta descripción. Intenta usar otra.";
+        src = "";
+      }
+
+      resultado.innerHTML = `<strong>Idea generada:</strong> ${texto}`;
+      if (src) {
+        imagen.src = src;
+        imagen.style.display = "block";
+      } else {
+        imagen.style.display = "none";
+      }
+    }
+
+    function reiniciarFormulario() {
+      document.getElementById('descripcion').value = "";
+      document.getElementById('resultado').innerHTML = "";
+      document.getElementById('imagen-generada').style.display = "none";
+    }
+  </script>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="Inicio.html">Inicio</a></li>
+        <li><a href="MiyVi.html">Misión y Visión</a></li>
+        <li><a href="MapaOffici.html">Mapa de Oficinas</a></li>
+        <li><a href="Proyec.html">Proyectos</a></li>
+        <li><a href="IA.html">Diseño con IA</a></li>
+        <li><a href="Contacto.html">Contacto</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Diseña tu espacio con IA</h1>
+    <p>Escribe una de las siguientes descripciones:</p>
+    <ul>
+      <li>Casa Encanto Natural</li>
+      <li>Casa Refugio Rojo</li>
+      <li>Casa Azul Contempo</li>
+      <li>Casa Brisa Clara</li>
+    </ul>
+
+    <form onsubmit="event.preventDefault(); generarIdea();">
+      <label for="descripcion">Describe tu casa ideal:</label>
+      <textarea id="descripcion" name="descripcion" rows="5" placeholder="Ejemplo: Quiero una casa azul contempo con estilo moderno..."></textarea>
+      <div class="btns">
+        <button type="submit">Generar Idea</button>
+        <button type="button" onclick="reiniciarFormulario()">Reiniciar</button>
+      </div>
+    </form>
+
+    <p id="resultado"></p>
+    <img id="imagen-generada" src="" alt="Imagen generada por IA">
+  </main>
+
+  <footer>
+    &copy; 2025 Imperium Desarrollos Inmobiliarios | Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>
